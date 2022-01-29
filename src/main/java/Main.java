@@ -1,7 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -9,6 +7,7 @@ public class Main {
 
         Scanner s = new Scanner(System.in);
         FormatGraph formatter = new FormatGraph();
+        InputParser inputParser = new InputParser();
         boolean isGraphical;
 
         while(true) {
@@ -18,11 +17,7 @@ public class Main {
             if(input.equals("x")) return;
 
             try{
-                //Format user input into a List, this should be pulled into its own class with more error checking.
-                List<Integer> degreeSequence = Stream.of(input.replaceAll("[^0-9 ]","").split(" "))
-                        .map(Integer::parseInt)
-                        .collect(Collectors.toList());
-
+                List<Integer> degreeSequence = inputParser.parse(input);
                 isGraphical = Havel.isGraphical(degreeSequence);
 
                 System.out.println("Degree sequence graphical: " +  String.valueOf(isGraphical).toUpperCase());
