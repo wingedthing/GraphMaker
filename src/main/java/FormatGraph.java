@@ -25,7 +25,7 @@ public class FormatGraph {
         StringBuilder result = new StringBuilder();
         List<Integer[]> edgeSet = graph.edgeSet();
 
-        result.append(edgeSet.size()).append(", {");
+        result.append(graph.size()).append(", {");
         edgeSet.stream().forEach(pair -> {
             result.append("{").append(pair[0]).append(",").append(pair[1]).append("},");
         });
