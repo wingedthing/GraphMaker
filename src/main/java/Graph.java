@@ -5,16 +5,29 @@ import java.util.*;
  * HashMap<Integer, List<Integer> with vertices as keys and a List of adjacent
  * vertices as values. Takes as a constructor parameter a List<Integer> of degree
  * sequences.
+ *
+ * @author John Sfara
+ * @version %I% %G%
+ * @since 1.0
  */
 
 public class Graph {
 
     private final Map<Integer, List<Integer>> map;
 
+    /**
+     * Constructor
+     *
+     * @param list Integer List of degree sequences
+     */
     public Graph(List<Integer> list) {
         this.map = this.createGraph(list);
     }
 
+    /**
+     *
+     * @return size of the vertex set V(G)
+     */
     public int size() {
         return this.map.size();
     }
@@ -22,8 +35,8 @@ public class Graph {
     /**
      * Returns a list of adjacent vertices for the given vertex.
      *
-     * @param vertex the target vertex to generate an adjacent list for.
-     * @return the list of adjacent vertices.
+     * @param vertex Target vertex to generate an adjacent list for.
+     * @return Integer List of adjacent vertices.
      */
     public List<Integer> getAdjacentList(Integer vertex) {
         return this.map.get(vertex);
@@ -40,8 +53,9 @@ public class Graph {
 
     /**
      * Calculates and returns the edge set E(G) of a graph G, as a list of Integer arrays.
+     * Exp: [[0,1],[0,2],[2,3],...]
      *
-     * @return Exp: [[0,1],[0,2],[2,3],...]
+     * @return List of edge pairs as arrays
      */
     public List<Integer[]> edgeSet() {
         List<Integer[]> edgeSet = new ArrayList<>();
@@ -61,7 +75,7 @@ public class Graph {
      * value after every iteration of the algo.
      *
      * @param list a List of degree sequences
-     * @return a Map of Integer vertices as keys with a List of Integer adjacent vertices as values.
+     * @return Map of Integer vertices as keys with a List of Integer adjacent vertices as values.
      */
     private Map<Integer, List<Integer>> createGraph(List<Integer> list) {
 
@@ -74,6 +88,7 @@ public class Graph {
 
             List<Integer> adjacentNodes = new ArrayList<>();
 
+            //Application of the Havel-Hakimi algorithm
             for (int j = i + 1; j <= i + currentDegree; j++) {
                 Integer[] nextArray = nodesAndDegrees.get(j);
                 int nextNode = nextArray[0];
