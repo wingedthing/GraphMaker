@@ -1,6 +1,21 @@
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Main entrance point for the graphMaker program. graphMaker takes as input a
+ * user defined degree sequence for a graph theory graph. Checks and outputs to
+ * std if degree sequence is graphical.
+ *
+ * If the sequence is graphical, graphMaker then proceeds to create a general
+ * simple graph from the degree sequence and will print to stdout properly
+ * formatted strings that can be entered into various math software
+ * (python Sage or Maple), to draw the graph.
+ *
+ * @author John Sfara
+ * @version %I% %G%
+ * @since 1.0
+ */
+
 public class Main {
 
     public static void main(String[] args) {

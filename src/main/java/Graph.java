@@ -5,10 +5,6 @@ import java.util.*;
  * HashMap<Integer, List<Integer> with vertices as keys and a List of adjacent
  * vertices as values. Takes as a constructor parameter a List<Integer> of degree
  * sequences.
- *
- * @author John Sfara
- * @version %I% %G%
- * @since 1.0
  */
 
 public class Graph {
