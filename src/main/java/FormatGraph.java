@@ -53,7 +53,7 @@ public class FormatGraph {
 
         result.append(graph.size()).append(", {");
         edgeSet.stream().forEach(pair -> {
-            result.append("{").append(pair[0]).append(",").append(pair[1]).append("},");
+            result.append("{").append(pair[0] + 1).append(",").append(pair[1] + 1).append("},");
         });
         result.setLength(result.length() - 1);
         result.append("}");
