@@ -3,6 +3,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * InputParser class provides methods for formatting and converting user input
+ * into relevant data structures.
+ */
+
 public class InputParser {
 
     /**
