@@ -1,7 +1,23 @@
 import java.util.List;
 
+/**
+ * FormatGraph is a class for formatting a graph created by the Graph class
+ * into an input string that will be accepted by various graphing software
+ * like sage and maple.
+ */
+
 public class FormatGraph {
 
+    /**
+     * Creates a String in the format accepted by python Sage.
+     * Exp: "{'vertex_0' : ['adjacent_0', 'adjacent_1', ...], vertex_1 : [...], ...}"
+     *
+     * @param graph a <code>Graph</code> object to convert
+     *
+     * @return a formatted String
+     *
+     * @see Graph
+     */
     public String sage(Graph graph) {
         StringBuilder result = new StringBuilder();
         result.append("{");
@@ -21,6 +37,16 @@ public class FormatGraph {
         return result.toString();
     }
 
+    /**
+     * Creates a String in the format accepted by Maple.
+     * Exp: "#_vertices, {{u,v},{u,w},{w,x}, ...}"
+     *
+     * @param graph a <code>Graph</code> object to convert
+     *
+     * @return a formatted String
+     *
+     * @see Graph
+     */
     public String maple(Graph graph) {
         StringBuilder result = new StringBuilder();
         List<Integer[]> edgeSet = graph.edgeSet();
