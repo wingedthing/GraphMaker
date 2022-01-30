@@ -2,12 +2,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The Havel class provides the isGraphical static method to check if a degree
+ * sequence is graphical using the Havel-Hakmi algorithm.
+ */
 public class Havel {
 
-    //checks if a degree sequence is valid using Havel-Hakmi algorithm
-
-    public static boolean isGraphical(List<Integer> ogList){
-        List<Integer> list = new ArrayList<>(ogList);
+    /**
+     * Checks if a degree sequence is valid using the Havel-Hakmi algorithm.
+     * Will also print to stdout each intermediate calculation of the algorithm
+     *
+     * @param degreeSequence a List of degree sequences from a graph
+     *
+     * @return <code>true</code> if degree sequence is graphical.
+     *
+     * @see InputParser
+     */
+    public static boolean isGraphical(List<Integer> degreeSequence){
+        List<Integer> list = new ArrayList<>(degreeSequence);
 
         while(true){
             list.sort(Collections.reverseOrder());
